@@ -17,14 +17,16 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Todo',
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.BigAutoField(auto_created=True,
+                 primary_key=True, serialize=False, verbose_name='ID')),
                 ('title', models.CharField(max_length=30)),
                 ('text', models.TextField(blank=True)),
                 ('created', models.DateTimeField(auto_now=True)),
                 ('date_completed', models.DateTimeField(blank=True, null=True)),
                 ('important', models.BooleanField(default=False)),
                 ('completed', models.BooleanField(default=False)),
-                ('user', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
+                ('user', models.ForeignKey(
+                    on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
             ],
         ),
     ]

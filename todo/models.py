@@ -20,3 +20,6 @@ class Todo(models.Model):
 
     # Foreignkey外鍵關聯(user_id <=> Todo_id)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return f'{self.title}- {self.user}'

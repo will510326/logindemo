@@ -5,10 +5,9 @@
 
     <li>
         <a href="{% url 'view' todo.id %}">
-            {{ todo.title }}
-            {% if todo.important %}(重要)
-            {% endif%}
+            {{ todo.title }}{% if todo.important %}(重要){% endif%}
         </a>
+        -({{ todo.date_completed }})
     </li>
 
     {% endfor %}

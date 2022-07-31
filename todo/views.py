@@ -7,6 +7,22 @@ from django.contrib.auth.decorators import login_required
 # Create your views here.
 
 
+@login_required
+def completed_by_id(request, id):
+    todo = get_object_or_404(Todo, id=id)
+
+    todo.completed = not todo.completed
+    # if todo.completed:
+    #     todo.completed = False
+    # else:
+    #     todo.completed = True
+
+    todo.date_completed = datetime.today().strftime(
+        '%Y-%m-%d %H:%M:%S') if todo.completed else None
+    todo.save()
+    return redirect('todo')
+
+
 def delete(request, id):
     todo = get_object_or_404(Todo, id=id)
     todo.delete()

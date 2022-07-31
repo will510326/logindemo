@@ -13,7 +13,8 @@
             {{ todo.title }}{% if todo.important %}(重要){% endif%}
             {% endif %}
         </a>
-        <a href="">完成</a>
+        &nbsp;&nbsp;
+        <a href="{% url 'completed_by_id' todo.id %}">完成</a>
         <a href="{% url 'delete' todo.id %}">刪除</a>
     </li>
 

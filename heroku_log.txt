@@ -1,0 +1,100 @@
+2022-08-03T05:55:11.459136+00:00 heroku[web.1]: Process exited with status 3
+2022-08-03T05:55:11.605382+00:00 heroku[web.1]: State changed from starting to crashed
+2022-08-03T11:39:17.137655+00:00 heroku[web.1]: State changed from crashed to starting
+2022-08-03T11:39:20.084267+00:00 heroku[web.1]: Starting process with command `gunicorn todolist_project.wsgi`
+2022-08-03T11:39:21.865073+00:00 app[web.1]: [2022-08-03 11:39:21 +0000] [4] [INFO] Starting gunicorn 20.1.0
+2022-08-03T11:39:21.865550+00:00 app[web.1]: [2022-08-03 11:39:21 +0000] [4] [INFO] Listening at: http://0.0.0.0:59436 (4)
+2022-08-03T11:39:21.865642+00:00 app[web.1]: [2022-08-03 11:39:21 +0000] [4] [INFO] Using worker: sync
+2022-08-03T11:39:21.869240+00:00 app[web.1]: [2022-08-03 11:39:21 +0000] [9] [INFO] Booting worker with pid: 9
+2022-08-03T11:39:21.921951+00:00 app[web.1]: [2022-08-03 11:39:21 +0000] [10] [INFO] Booting worker with pid: 10
+2022-08-03T11:39:22.048919+00:00 app[web.1]: [2022-08-03 11:39:22 +0000] [9] [ERROR] Exception in worker process
+2022-08-03T11:39:22.048921+00:00 app[web.1]: Traceback (most recent call last):
+2022-08-03T11:39:22.048922+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.9/site-packages/gunicorn/arbiter.py", line 589, in spawn_worker
+2022-08-03T11:39:22.048923+00:00 app[web.1]: worker.init_process()
+2022-08-03T11:39:22.048923+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.9/site-packages/gunicorn/workers/base.py", line 134, in init_process
+2022-08-03T11:39:22.048924+00:00 app[web.1]: self.load_wsgi()
+2022-08-03T11:39:22.048924+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.9/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+2022-08-03T11:39:22.048925+00:00 app[web.1]: self.wsgi = self.app.wsgi()
+2022-08-03T11:39:22.048925+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.9/site-packages/gunicorn/app/base.py", line 67, in wsgi
+2022-08-03T11:39:22.048926+00:00 app[web.1]: self.callable = self.load()
+2022-08-03T11:39:22.048926+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+2022-08-03T11:39:22.048926+00:00 app[web.1]: return self.load_wsgiapp()
+2022-08-03T11:39:22.048927+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+2022-08-03T11:39:22.048927+00:00 app[web.1]: return util.import_app(self.app_uri)
+2022-08-03T11:39:22.048927+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.9/site-packages/gunicorn/util.py", line 359, in import_app
+2022-08-03T11:39:22.048928+00:00 app[web.1]: mod = importlib.import_module(module)
+2022-08-03T11:39:22.048928+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.9/importlib/__init__.py", line 127, in import_module
+2022-08-03T11:39:22.048929+00:00 app[web.1]: return _bootstrap._gcd_import(name[level:], package, level)
+2022-08-03T11:39:22.048929+00:00 app[web.1]: File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+2022-08-03T11:39:22.048929+00:00 app[web.1]: File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+2022-08-03T11:39:22.048929+00:00 app[web.1]: File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+2022-08-03T11:39:22.048930+00:00 app[web.1]: File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+2022-08-03T11:39:22.048930+00:00 app[web.1]: File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+2022-08-03T11:39:22.048930+00:00 app[web.1]: File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+2022-08-03T11:39:22.048931+00:00 app[web.1]: File "/app/todolist_project/wsgi.py", line 16, in <module>
+2022-08-03T11:39:22.048931+00:00 app[web.1]: application = get_wsgi_application()
+2022-08-03T11:39:22.048931+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.9/site-packages/django/core/wsgi.py", line 12, in get_wsgi_application
+2022-08-03T11:39:22.048932+00:00 app[web.1]: django.setup(set_prefix=False)
+2022-08-03T11:39:22.048932+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.9/site-packages/django/__init__.py", line 19, in setup
+2022-08-03T11:39:22.048932+00:00 app[web.1]: configure_logging(settings.LOGGING_CONFIG, settings.LOGGING)
+2022-08-03T11:39:22.048933+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.9/site-packages/django/conf/__init__.py", line 87, in __getattr__
+2022-08-03T11:39:22.048933+00:00 app[web.1]: self._setup(name)
+2022-08-03T11:39:22.048933+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.9/site-packages/django/conf/__init__.py", line 74, in _setup
+2022-08-03T11:39:22.048934+00:00 app[web.1]: self._wrapped = Settings(settings_module)
+2022-08-03T11:39:22.048934+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.9/site-packages/django/conf/__init__.py", line 222, in __init__
+2022-08-03T11:39:22.048934+00:00 app[web.1]: raise ValueError("Incorrect timezone setting: %s" % self.TIME_ZONE)
+2022-08-03T11:39:22.048934+00:00 app[web.1]: ValueError: Incorrect timezone setting: Asia/taipei
+2022-08-03T11:39:22.049147+00:00 app[web.1]: [2022-08-03 11:39:22 +0000] [9] [INFO] Worker exiting (pid: 9)
+2022-08-03T11:39:22.076329+00:00 app[web.1]: [2022-08-03 11:39:22 +0000] [10] [ERROR] Exception in worker process
+2022-08-03T11:39:22.076330+00:00 app[web.1]: Traceback (most recent call last):
+2022-08-03T11:39:22.076331+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.9/site-packages/gunicorn/arbiter.py", line 589, in spawn_worker
+2022-08-03T11:39:22.076332+00:00 app[web.1]: worker.init_process()
+2022-08-03T11:39:22.076332+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.9/site-packages/gunicorn/workers/base.py", line 134, in init_process
+2022-08-03T11:39:22.076332+00:00 app[web.1]: self.load_wsgi()
+2022-08-03T11:39:22.076333+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.9/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+2022-08-03T11:39:22.076333+00:00 app[web.1]: self.wsgi = self.app.wsgi()
+2022-08-03T11:39:22.076333+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.9/site-packages/gunicorn/app/base.py", line 67, in wsgi
+2022-08-03T11:39:22.076334+00:00 app[web.1]: self.callable = self.load()
+2022-08-03T11:39:22.076334+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+2022-08-03T11:39:22.076334+00:00 app[web.1]: return self.load_wsgiapp()
+2022-08-03T11:39:22.076335+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.9/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+2022-08-03T11:39:22.076338+00:00 app[web.1]: return util.import_app(self.app_uri)
+2022-08-03T11:39:22.076338+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.9/site-packages/gunicorn/util.py", line 359, in import_app
+2022-08-03T11:39:22.076339+00:00 app[web.1]: mod = importlib.import_module(module)
+2022-08-03T11:39:22.076339+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.9/importlib/__init__.py", line 127, in import_module
+2022-08-03T11:39:22.076339+00:00 app[web.1]: return _bootstrap._gcd_import(name[level:], package, level)
+2022-08-03T11:39:22.076340+00:00 app[web.1]: File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+2022-08-03T11:39:22.076340+00:00 app[web.1]: File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+2022-08-03T11:39:22.076340+00:00 app[web.1]: File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+2022-08-03T11:39:22.076341+00:00 app[web.1]: File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+2022-08-03T11:39:22.076341+00:00 app[web.1]: File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+2022-08-03T11:39:22.076341+00:00 app[web.1]: File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+2022-08-03T11:39:22.076342+00:00 app[web.1]: File "/app/todolist_project/wsgi.py", line 16, in <module>
+2022-08-03T11:39:22.076342+00:00 app[web.1]: application = get_wsgi_application()
+2022-08-03T11:39:22.076342+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.9/site-packages/django/core/wsgi.py", line 12, in get_wsgi_application
+2022-08-03T11:39:22.076343+00:00 app[web.1]: django.setup(set_prefix=False)
+2022-08-03T11:39:22.076343+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.9/site-packages/django/__init__.py", line 19, in setup
+2022-08-03T11:39:22.076343+00:00 app[web.1]: configure_logging(settings.LOGGING_CONFIG, settings.LOGGING)
+2022-08-03T11:39:22.076343+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.9/site-packages/django/conf/__init__.py", line 87, in __getattr__
+2022-08-03T11:39:22.076344+00:00 app[web.1]: self._setup(name)
+2022-08-03T11:39:22.076344+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.9/site-packages/django/conf/__init__.py", line 74, in _setup
+2022-08-03T11:39:22.076344+00:00 app[web.1]: self._wrapped = Settings(settings_module)
+2022-08-03T11:39:22.076345+00:00 app[web.1]: File "/app/.heroku/python/lib/python3.9/site-packages/django/conf/__init__.py", line 222, in __init__
+2022-08-03T11:39:22.076345+00:00 app[web.1]: raise ValueError("Incorrect timezone setting: %s" % self.TIME_ZONE)
+2022-08-03T11:39:22.076346+00:00 app[web.1]: ValueError: Incorrect timezone setting: Asia/taipei
+2022-08-03T11:39:22.076498+00:00 app[web.1]: [2022-08-03 11:39:22 +0000] [10] [INFO] Worker exiting (pid: 10)
+2022-08-03T11:39:22.146145+00:00 app[web.1]: [2022-08-03 11:39:22 +0000] [4] [WARNING] Worker with pid 10 was terminated due to signal 15
+2022-08-03T11:39:22.243247+00:00 app[web.1]: [2022-08-03 11:39:22 +0000] [4] [INFO] Shutting down: Master
+2022-08-03T11:39:22.243282+00:00 app[web.1]: [2022-08-03 11:39:22 +0000] [4] [INFO] Reason: Worker failed to boot.
+2022-08-03T11:39:22.398160+00:00 heroku[web.1]: Process exited with status 3
+2022-08-03T11:39:22.460892+00:00 heroku[web.1]: State changed from starting to crashed
+2022-08-03T13:42:58.717760+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=todolist-wayne.herokuapp.com request_id=5afcd189-76a5-41b2-ba79-dd1bab670b94 fwd="61.63.117.220" dyno= connect= service= status=503 bytes= protocol=https
+2022-08-03T13:42:59.114368+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=todolist-wayne.herokuapp.com request_id=a2a1f713-21dd-456d-ac99-0d2874a2cb83 fwd="61.63.117.220" dyno= connect= service= status=503 bytes= protocol=https
+2022-08-03T13:45:45.674304+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=todolist-wayne.herokuapp.com request_id=4c5497b5-0b5c-408c-9c13-d3b507e25b67 fwd="61.63.117.220" dyno= connect= service= status=503 bytes= protocol=https
+2022-08-03T13:45:45.992585+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=todolist-wayne.herokuapp.com request_id=ecc671b8-3dfe-475e-adb3-3dac4e389d9d fwd="61.63.117.220" dyno= connect= service= status=503 bytes= protocol=https
+2022-08-03T13:46:36.186523+00:00 app[api]: Starting process with command `rails console` by user will510326@gmail.com
+2022-08-03T13:46:39.655999+00:00 heroku[run.2184]: Awaiting client
+2022-08-03T13:46:39.676792+00:00 heroku[run.2184]: Starting process with command `rails console`
+2022-08-03T13:46:39.689023+00:00 heroku[run.2184]: State changed from starting to up
+2022-08-03T13:46:43.232452+00:00 heroku[run.2184]: Process exited with status 127
+2022-08-03T13:46:43.578668+00:00 heroku[run.2184]: State changed from up to complete

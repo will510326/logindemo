@@ -1,5 +1,4 @@
 from django.shortcuts import get_object_or_404, redirect, render
-from tenacity import retry
 from .models import Todo
 from .forms import TodoForm
 from datetime import datetime

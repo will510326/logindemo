@@ -1,0 +1,25 @@
+{% extends 'base.html' %}{% block content%}
+<h1>View</h1>
+<h2>{{ todo.title}}</h2>
+
+<form action="" method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" name="update" value="更新">
+    <input type="submit" name="delete" value="刪除">
+</form>
+<p style="color: red;">{{ message }}</p>
+
+
+
+
+
+
+<!-- 
+<ul>
+    <li>內容：{{ todo.text }}</li>
+    <li>建立日期：{{ todo.created }}</li>
+    <li>重要性：{{ todo.important }}</li>
+    <li>完成度：{{ todo.completed }}</li>
+</ul> -->
+{% endblock %}

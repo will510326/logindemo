@@ -18,7 +18,7 @@
                     width="30px"></a>
 
 
-            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false"
+            <a id="burger" role="button" class="navbar-burger" aria-label="menu" aria-expanded="false"
                 data-target="navbarBasicExample">
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
@@ -26,7 +26,7 @@
             </a>
         </div>
 
-        <div id="navbarBasicExample" class="navbar-menu">
+        <div id="navbar-links" class="navbar-menu">
             {% if user.is_authenticated %}
             <div class="navbar-start">
                 <a class="navbar-item" href="{% url 'profile'%}">
@@ -59,10 +59,9 @@
                 </div>
 
             </div>
-            {% endif %}
+            {% else %}
             <div class="navbar-end">
                 <div class="navbar-item">
-                    {% if not user.is_authenticated %}
                     <div class="buttons">
                         <a class="button is-primary" href="{% url 'register' %}">
                             <strong>Sign up</strong>
@@ -71,9 +70,9 @@
                             Log in
                         </a>
                     </div>
-                    {% endif %}
                 </div>
             </div>
+            {% endif %}
         </div>
     </nav>
 
@@ -81,6 +80,14 @@
 
 
     {% endblock %}
+    <script>
+        const bugerIcorn = document.querySelector('#burger');
+        const navbarmenu = document.querySelector('#navbar-links');
+
+        bugerIcorn.addEventListener("click", () => {
+            navbarmenu.classList.toggle("is-active");
+        });
+    </script>
 </body>
 
 </html>

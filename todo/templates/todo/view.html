@@ -1,25 +1,41 @@
 {% extends 'base.html' %}{% block content%}
-<h1>View</h1>
-<h2>{{ todo.title}}</h2>
-
-<form action="" method="POST">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" name="update" value="更新">
-    <input type="submit" name="delete" value="刪除">
-</form>
-<p style="color: red;">{{ message }}</p>
-
-
-
-
-
-
-<!-- 
-<ul>
-    <li>內容：{{ todo.text }}</li>
-    <li>建立日期：{{ todo.created }}</li>
-    <li>重要性：{{ todo.important }}</li>
-    <li>完成度：{{ todo.completed }}</li>
-</ul> -->
+<div class="columns is-centered has-text-centered">
+    <div class="column is-size-1">檢視</div>
+</div>
+<div class="columns is-centered">
+    <div class="column is-4">
+        <form action="" method="POST" class="box has-text-centered">
+            {% csrf_token %}
+            <div class="field">
+                <label class="label">標題</label>
+                <div class="control">
+                    <input class="input has-text-centered" type="text" name="title" value="{{ todo.title }}"
+                        id="id_title">
+                </div>
+            </div>
+            <div class="field">
+                <label class="label">內文</label>
+                <div class="control">
+                    <textarea class="textarea" name="text" required id="id_text">{{ todo.text }}</textarea>
+                </div>
+            </div>
+            <div class="field">
+                <div class="control has-text-left">
+                    <input type="checkbox" name="important" id="id_important" {% if todo.important %} checked
+                        {% endif %}>重要
+                    <input type="checkbox" name="completed" id="id_completed" {% if todo.completed %} checked
+                        {% endif %}>完成
+                </div>
+            </div>
+            <div class="field is-grouped is-grouped-centered">
+                <p class="control">
+                    <input class="button is-primary" type="submit" name="update" value="更新">
+                </p>
+                <p class="control">
+                    <input class="button is-warning" type="submit" name="delete" value="刪除">
+                </p>
+            </div>
+        </form>
+    </div>
+</div>
 {% endblock %}

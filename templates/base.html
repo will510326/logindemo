@@ -9,6 +9,10 @@
     <title>Todolist</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <!-- <link rel="stylesheet" href="../static/css/style.css"> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css"
+        rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 </head>
 
 <body>
@@ -48,13 +52,6 @@
                         <a class="navbar-item" href="{% url 'completed' %}">
                             檢視已完成todo
                         </a>
-                        <a class="navbar-item">
-                            Contact
-                        </a>
-                        <hr class="navbar-divider">
-                        <a class="navbar-item">
-                            Report an issue
-                        </a>
                     </div>
                 </div>
 
@@ -75,11 +72,26 @@
             {% endif %}
         </div>
     </nav>
+    <section class="hero is-info is-fullheight-with-navbar">
+        <div class="hero-body">
+            <div class="container">
+                {% block content %}
 
-    {% block content %}
 
-
-    {% endblock %}
+                {% endblock %}
+                {% if message %}
+                <div class="columns is-centered">
+                    <div class="column is-4">
+                        <div class="notification is-primary has-text-centered" id="message">
+                            <button class="delete"></button>
+                            {{ message }}
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </section>
     <script>
         const bugerIcorn = document.querySelector('#burger');
         const navbarmenu = document.querySelector('#navbar-links');
